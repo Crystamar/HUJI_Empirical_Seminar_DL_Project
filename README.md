@@ -7,7 +7,7 @@ be effective in a number of other fields of deep learning. As described in "An
 image is worth 16x16 words" from 2020, BERT-like architectures have proven to
 be effective in the field of image processing and classification when operating on
 embedded image patches. These architectures were found to be better than big
-ResNets which were the SOTA architectures for image classication at the time
+ResNets which were the SOTA architectures for image classification at the time
 when trained on large enough datasets. The hypothesized reason was that Transformers lack image-specific inductive biases that are present in convolution based
 networks such as locality, two-dimensional neighborhood structure and translation
 equivariance. While this makes Transformer based architectures "slower learners"
@@ -19,7 +19,7 @@ patches in certain ways (using bigger patches near the middle of the image for
 example), might inject image-specific bias into the model and therefore achieve
 better results in the earlier phases of training. As shown in this experiment, this
 might be somewhat true as when trained over CIFAR-10 most of the biased models
-achieve better accuracies then the unbiased model in the rst few training epochs,
+achieve better accuracies then the unbiased model in the first few training epochs,
 but the unbiased models end up with the best accuracies after 25 training epochs.
 I will try to explain this phenomenon in this paper.
 This might have some significance as it can serve as a very simple and relatively
