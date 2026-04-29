@@ -36,15 +36,20 @@ if __name__ == '__main__':
     epochs = 25
 
     """
-    Patch sizes options are:
-
+    Non-seperate patch sizes options are:
+    
     Unbiased:
     A tuple of the same int x which 48 is divisible by, y times when y = 48/x
-
+    
     Biased:
     3x3: (2, 44, 2), (12, 24, 12), (14, 20, 14), (18, 12, 18), (19, 10, 19), (22, 4, 22)
     4x4: (2, 22, 22, 2), (6, 18, 18, 6), (8, 16, 16, 8), (10, 14, 14, 10), (16, 8, 8, 16), (19, 5, 5, 19), (22, 2, 2, 22)
     6x6: (4, 8, 12, 12, 8, 4), (12, 8, 4, 4, 8, 12)
+    
+    (I chose not to use a generic class that allows any legal sequence of patch sizes for the non-seperate embeddings,
+    because it would necessitate looping in each forward operation which i assumed would slow performance noticeably)
+    
+    (The seperate embeddings models allow for any legal patch sizes sequence)
     """
     patches = [(2, 44, 2), (12, 24, 12), (14, 20, 14), (16, 16, 16), (18, 12, 18), (19, 10, 19), (22, 4, 22),
                (2, 22, 22, 2), (6, 18, 18, 6), (8, 16, 16, 8), (10, 14, 14, 10), (12, 12, 12, 12), (16, 8, 8, 16), (19, 5, 5, 19), (22, 2, 2, 22),
